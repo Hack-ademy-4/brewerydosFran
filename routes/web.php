@@ -17,5 +17,7 @@ use App\Http\Controllers\BreweryController;
 Route::get('/', [HomeController::class,"home"])->name("home");
 Route::get('/contact',[HomeController::class,"contact"])->name("contact");
 Route::post('/contact',[HomeController::class,"newContact"])->name("contact_new");
+Route::get('/newCerveceria',[BreweryController::class,"newCerveceria"])->name("new_cerveceria");
+Route::post('/create',[BreweryController::class,"create"])->name("create");
 Route::get('/cervecerias',[BreweryController::class,"todas"])->name("cervecerias");
 Route::get('/detalles',[BreweryController::class,"details"])->name("detalles");

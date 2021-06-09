@@ -23,7 +23,7 @@
           <li><a class="nav-link scrollto" href="{{route("cervecerias")}}">Breweries</a></li>
           <li><a class="nav-link scrollto" href="{{route("detalles")}}">Beers</a></li>
           <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
-          <li><a class="nav-link scrollto" href="#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="{{route("create")}}">Create</a></li>
           
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>

@@ -63,6 +63,18 @@ class BreweryController extends Controller
       ];
 
     return view ("detalles", ["lots"=>$detalles]);
+    //return view ("detalles", compact('detalles'));
+}
+
+public function newCerveceria(){
+  return view ("newCerveceria");
+}
+
+
+
+ 
+public function create(Request $request){
+  dd($request->all());
 
 }
 }
