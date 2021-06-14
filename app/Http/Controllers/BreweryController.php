@@ -2,79 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brewery;
 use Illuminate\Http\Request;
 
 
 class BreweryController extends Controller
-{
+{  //leer toda la cerveceria
     public function todas()
     {
-        $cervecerias = [
-          [
-            "nombre"=>"Old Town",
-            "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, aspernatur dolorem distinctio ad ipsa quos pariatur porro exercitationem quidem dolorum cupiditate totam ipsum illo fuga asperiores cumque vel numquam amet?",
-            "aforo"=>20
-            ],
-          [
-            "nombre"=>"Irish Drunks",
-            "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, aspernatur dolorem distinctio ad ipsa quos pariatur porro exercitationem quidem dolorum cupiditate totam ipsum illo fuga asperiores cumque vel numquam amet?",
-            "aforo"=>43
-            ],
-          [
-            "nombre"=>"Joyce",
-            "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, aspernatur dolorem distinctio ad ipsa quos pariatur porro exercitationem quidem dolorum cupiditate totam ipsum illo fuga asperiores cumque vel numquam amet?",
-            "aforo"=>17
-            ],
-          [
-            "nombre"=>"Piccolo Bar",
-            "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, aspernatur dolorem distinctio ad ipsa quos pariatur porro exercitationem quidem dolorum cupiditate totam ipsum illo fuga asperiores cumque vel numquam amet?",
-            "aforo"=>26
-            ]
-        ];
-        return view("cervecerias",["breweries"=>$cervecerias]);
+        $cervecerias = Brewery::all();
+        return view("cervecerias",compact('cervecerias'));
     }
-    
-    public function details()
+  // mostrar form cerveceria
+    public function newCerveceria()
     {
-        $detalles = 
-      [
-        [
-          "nombre"=>"Dorada no filetrada",
-          "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit",
-          "cantidad"=>20,
-          "img"=>""
-          ],
-        [
-          "nombre"=>"Mahou classica",
-          "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit",
-          "cantidad"=>5,
-          "img"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ9eNncrZiIDDliAUy3okHfhS3QFClFm8YLQ&usqp=CAU"
-          ],
-        [
-          "nombre"=>"Estrella galicia",
-          "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit",
-          "cantidad"=>150,
-          ],
-        [
-          "nombre"=>"San Miguel",
-          "desc"=>"Lorem ipsum dolor sit, amet consectetur adipisicing elit",
-          "cantidad"=>0
-          ]
-      ];
+      return view ("newCerveceria");
+    }
+  // guardar datos cerveceria
+    public function create(Request $request)
+    {
+    $validatedData = $request->validate
+    ([
+    'name'=>'required',
+    'description'=>'required',
+    'capacity'=>'required'
+    ]);
 
-    return view ("detalles", ["lots"=>$detalles]);
-    //return view ("detalles", compact('detalles'));
-}
+    $cerveceria = new Brewery();
+    $cerveceria->name = $validatedData['name'];
+    $cerveceria->description = $validatedData['description'];
+    $cerveceria->capacity = $validatedData['capacity'];
 
-public function newCerveceria(){
-  return view ("newCerveceria");
-}
+    $cerveceria->save();
+
+    //Brewery::create($validatedData);
+    return redirect()->route("cervecerias");
+    }
+    // detalle una cerveceria
 
 
 
- 
-public function create(Request $request){
-  dd($request->all());
-
-}
+    public function show($id)
+    {
+        $cerveceria = Brewery::findOrFail($id);
+        return view("breweries-show",compact('cerveceria'));
+    }
 }

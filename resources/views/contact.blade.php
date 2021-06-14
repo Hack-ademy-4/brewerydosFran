@@ -49,7 +49,7 @@
           </div>
         </div>
 
-        <form action="{{route("contact_new")}}" method="post" role="form" class="php-email-form">
+        <form action="{{route("contact_new")}}" method="POST" role="form" class="php-email-form">
         @csrf  
         <div class="row">
             <div class="col-md-6 form-group">

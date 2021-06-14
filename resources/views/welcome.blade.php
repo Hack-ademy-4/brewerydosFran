@@ -26,8 +26,7 @@
                                 <a href="{{route("cervecerias")}}"
                                     class="btn-menu animate__animated animate__fadeInUp scrollto">Our
                                     Breweries</a>
-                                <a href="{{route("detalles")}}"
-                                    class="btn-book animate__animated animate__fadeInUp scrollto">Our Beers</a>
+        
                             </div>
                         </div>
                     </div>
@@ -50,7 +49,7 @@
                                 <a href="{{route("cervecerias")}}"
                                     class="btn-menu animate__animated animate__fadeInUp scrollto">Our
                                     Breweries</a>
-                                <a href="{{route("detalles")}}"
+                                <a href="#"
                                     class="btn-book animate__animated animate__fadeInUp scrollto">Our Beers</a>
                             </div>
                         </div>
@@ -75,8 +74,6 @@
                                 <a href="{{route("cervecerias")}}"
                                     class="btn-menu animate__animated animate__fadeInUp scrollto">Our
                                     Breweries</a>
-                                <a href="{{route("detalles")}}"
-                                    class="btn-book animate__animated animate__fadeInUp scrollto">Our Beers</a>
                             </div>
                         </div>
                     </div>

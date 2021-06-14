@@ -1,5 +1,4 @@
 @extends('app')
-@section('title','Contact With Us')
 @section('content')
 
 <header class="fixed-top d-flex align-items-center bg-dark py-2">
@@ -20,28 +19,26 @@
             </ul>    
     </div>
 </header>
-
-<!-- ======= Contact Section ======= -->
-
-<section id="contact" class="contact">
-    <div class="container mt-5 pt-5">
    
-        <form action="{{route("create")}}" method="POST" role="form" class="php-email-form">
-        @csrf
-            <div class="row">
-                <div class="col-md-4 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="name" required>
+     
+<!-- ======= Cervecerias Section ======= -->
+<section id="menu" class="menu">
+    <div class="container-fluid my-5 py-5">
+        <div class="section-title">
+            <h2>Check your favourite<span>Brewery</span></h2>
+        </div>
+        <div class="row justify-content-evenly">
+            <div class="col-12 col-md-6 mb-5">
+                <div class="member">
+                    <div class="pic"><img src="/img/slide/slide-4.jpg" class="img-fluid shadow rounded-3" alt=""></div>
+                    <div class="member-info">
+                        <h5 class="card-title mt-3">{{$cerveceria->name}}</h5>
+                        <p class="card-title mt-3 small">{{$cerveceria->description}}</p>
+                    </div>
                 </div>
-                <div class="col-md-4 form-group">
-                    <input type="text" name="description" class="form-control" id="description" placeholder="description"
-                        required>
-                </div>
-                <div class="col-md-4 form-group">
-                    <input type="number" name="capacity" class="form-control" id="capacity" placeholder="capacity"
-                        required>
-                </div>
-                <div class="text-center"><button type="submit">Run</button></div>
-        </form>
+            </div>
+        </div>
     </div>
 </section>
 @endsection
+<!-- End Cervecerias Section -->

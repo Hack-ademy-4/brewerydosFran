@@ -17,7 +17,18 @@ use App\Http\Controllers\BreweryController;
 Route::get('/', [HomeController::class,"home"])->name("home");
 Route::get('/contact',[HomeController::class,"contact"])->name("contact");
 Route::post('/contact',[HomeController::class,"newContact"])->name("contact_new");
-Route::get('/newCerveceria',[BreweryController::class,"newCerveceria"])->name("new_cerveceria");
-Route::post('/create',[BreweryController::class,"create"])->name("create");
+//todas la cerveceria
 Route::get('/cervecerias',[BreweryController::class,"todas"])->name("cervecerias");
-Route::get('/detalles',[BreweryController::class,"details"])->name("detalles");
+//crear nueva cerveceria
+Route::get('/newCerveceria',[BreweryController::class,"newCerveceria"])->name("newCerveceria");
+Route::post('/create',[BreweryController::class,"create"])->name("create");
+
+// detalle cerveceria
+Route::get('/breweries/{id}',[BreweryController::class,'show'])->name("breweries.show");
+
+// editar una cerveceria
+//Route::get('/breweries/{id}/edit',[BreweryController::class,'edit'])->name("breweries.edit");
+//Route::put('/breweries/{id}',[BreweryController::class,'update'])->name("breweries.update");
+
+// eliminar una cerveceria
+//Route::delete('/breweries/{id}',[BreweryController::class,'destroy'])->name("breweries.destroy");
