@@ -2,6 +2,7 @@
 @section('title','Contact With Us')
 @section('content')
 
+
 <header class="fixed-top d-flex align-items-center bg-dark py-2">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
@@ -24,9 +25,14 @@
 <!-- ======= Contact Section ======= -->
 
 <section id="contact" class="contact">
+<div class="container-fluid text-center">
+<h1>Edit Brewery</h1>
+</div>
     <div class="container mt-5 pt-5">
-        <form action="{{route("create")}}" method="POST" role="form" class="php-email-form">
+   
+        <form action="{{route("breweries.update",['id'=>$cerveceria->id])}}" method="POST" role="form" class="php-email-form">
         @csrf
+        @method('PUT')
             <div class="row">
                 <div class="col-md-4 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="name" required>
@@ -43,4 +49,5 @@
         </form>
     </div>
 </section>
+
 @endsection

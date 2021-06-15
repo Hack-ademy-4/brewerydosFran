@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Breweries</title>
+    <a class="nav-link scrollto active" href="{{route("home")}}"><title>Breweries</title></a>
     <meta content="" name="description">
     <meta content="" name="keywords">
 

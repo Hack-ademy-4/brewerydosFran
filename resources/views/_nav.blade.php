@@ -14,8 +14,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="{{route("home")}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{route("cervecerias")}}">Breweries</a></li>
-          <li><a class="nav-link scrollto" href="{{route("newCerveceria")}}">Create</a></li>
-          <li><a class="nav-link scrollto" href="#"></a></li>
+          <li><a class="nav-link scrollto" href="{{route("newCerveceria")}}">Add Brewery</a></li>
           <!-- drop down -->
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

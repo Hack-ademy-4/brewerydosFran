@@ -14,7 +14,7 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="{{route("home")}}">Home</a></li>
                 <li><a class="nav-link scrollto" href="{{route("cervecerias")}}">Breweries</a></li>
-                <li><a class="nav-link scrollto" href="{{route("create")}}">Create</a></li>
+                <li><a class="nav-link scrollto" href="{{route("create")}}">Add Brewery</a></li>
                 <li><a class="nav-link scrollto" href="{{route("contact")}}">Contact</a></li>
             </ul>    
     </div>

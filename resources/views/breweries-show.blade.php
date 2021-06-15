@@ -14,7 +14,7 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="{{route("home")}}">Home</a></li>
                 <li><a class="nav-link scrollto" href="{{route("cervecerias")}}">Breweries</a></li>
-                <li><a class="nav-link scrollto" href="{{route("create")}}">Create</a></li>
+                <li><a class="nav-link scrollto" href="{{route("create")}}">Add Brewery</a></li>
                 <li><a class="nav-link scrollto" href="{{route("contact")}}">Contact</a></li>
             </ul>    
     </div>
@@ -34,6 +34,12 @@
                     <div class="member-info">
                         <h5 class="card-title mt-3">{{$cerveceria->name}}</h5>
                         <p class="card-title mt-3 small">{{$cerveceria->description}}</p>
+                        <a class= "btn btn-warning mb-3" href="{{route('breweries.edit',['id'=>$cerveceria->id])}}">Edit</a>
+                       <form action="{{route('breweries.destroy',['id'=>$cerveceria->id])}}" method="POST">
+                       @csrf
+                       @method('DELETE')
+                       <button type="submit" class="btn btn-danger mb-3">Delete</button>
+                       </form>
                     </div>
                 </div>
             </div>
